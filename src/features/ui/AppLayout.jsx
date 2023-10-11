@@ -7,7 +7,7 @@ function AppLayout() {
   const isLoading = navigation.state === "loading";
   return (
     <div className="layout">
-      {isLoading ? <Loading /> : null} {/* Conditionally render Loader */}
+      {isLoading ? <Loading /> : null}
       <Header />
       <main>
         <h1>Pizza menu</h1>
