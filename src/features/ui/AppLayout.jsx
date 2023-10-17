@@ -1,18 +1,20 @@
-import Header from "./Header";
-import CartOverview from "../cart/CartOverview";
-import { Outlet, useNavigation } from "react-router-dom";
-import Loading from "./Loading";
+import Header from './Header';
+import CartOverview from '../cart/CartOverview';
+import { Outlet, useNavigation } from 'react-router-dom';
+import Loading from './Loading';
 function AppLayout() {
   const navigation = useNavigation();
-  const isLoading = navigation.state === "loading";
+  const isLoading = navigation.state === 'loading';
   return (
-    <div className="layout">
-      {isLoading ? <Loading /> : null}
+    <div className="grid h-screen grid-rows-[auto_1fr_auto]">
+      {isLoading && <Loading />}
       <Header />
-      <main>
-        <h1>Pizza menu</h1>
-        <Outlet />
-      </main>
+      <div className=" overflow-scroll">
+        <main className="mx-auto max-w-3xl ">
+          {/* <h1>Pizza menu</h1> */}
+          <Outlet />
+        </main>
+      </div>
       <CartOverview />
     </div>
   );
