@@ -36,7 +36,7 @@ function CreateOrder() {
             type="text"
             name="customer"
             required
-            className="input w-full"
+            className="input grow"
             defaultValue={username}
           />
         </div>
